@@ -1,0 +1,8 @@
+{
+    "name":"projeto/estagio",
+    "autoload": {
+        "psr-4": {
+            "App\\":"app/"
+        }
+    }
+}
