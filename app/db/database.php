@@ -5,7 +5,7 @@ namespace App\db;
 use \PDO;
 use \PDOException;
 
-class database{
+class DataBase{
     /**
      * Host de conexao com o banco de dados 
      * @var string

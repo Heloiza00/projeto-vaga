@@ -1,6 +1,6 @@
 <main>
     <section>
-        <a href="index.php">
+        <a href="listar.php">
             <button class="btn btn-success">Voltar</button>
         </a>
     </section>

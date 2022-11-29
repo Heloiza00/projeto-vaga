@@ -2,7 +2,7 @@
 
 namespace App\Entity;
 
-use App\db\database;
+use App\db\DataBase;
 use \PDO;
 
 class Vaga
@@ -47,7 +47,7 @@ class Vaga
         // DEFINIR A DATA
         $this->data = date('Y-m-d H:i:s');
         //INSERIR A VAGA NO BANCO
-        $obDatabase = new database('vagas');
+        $obDatabase = new DataBase('vagas');
         $this->id = $obDatabase->insert([
                                             'titulo' => $this->titulo,
                                             'descricao' => $this->descricao,
@@ -65,7 +65,7 @@ class Vaga
         * @return boolean
         */
     public function atualizar(){
-         return (new database('vagas'))->update('id = '.$this->id,[
+         return (new DataBase('vagas'))->update('id = '.$this->id,[
                                                                     'titulo' => $this->titulo,
                                                                     'descricao' => $this->descricao,
                                                                     'ativo' => $this->ativo,
@@ -80,7 +80,7 @@ class Vaga
         * @return boolean
         */
     public function excluir(){
-        return (new database('vagas'))->delete('id = '.$this->id);
+        return (new DataBase('vagas'))->delete('id = '.$this->id);
     }
 
         /**
@@ -92,7 +92,7 @@ class Vaga
          */
     public static function getVagas($where = null, $order = null, $limit = null)
     {
-          return (new database('vagas'))->select($where,$order,$limit)
+          return (new DataBase('vagas'))->select($where,$order,$limit)
                                         ->fetchAll(PDO::FETCH_CLASS,self::class);   //todo retorno vai se tranformar em um array, por meio do metodo fetchAll dp PDO.
     }
     /**
@@ -101,7 +101,7 @@ class Vaga
      * @return Vaga
      */
     public static function getVaga($id){
-       return (new database('vagas'))->select('id = '.$id)
+       return (new DataBase('vagas'))->select('id = '.$id)
                                      ->fetchObject(self::class);
     }
 
