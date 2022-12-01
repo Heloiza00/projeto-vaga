@@ -17,7 +17,7 @@ if (isset($_POST['titulo'], $_POST['descricao'], $_POST['ativo'])) {
     $obVaga->ativo = $_POST['ativo'];
     $obVaga->cadastrar();
 
-    header('location: index.php?status=success'); 
+    header('location: listar.php?status=success'); 
     exit;
 }
 

@@ -6,7 +6,7 @@ use App\Entity\Produto;
 
 //VALIDAÇÃO DO ID
 if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
-     header('location: index.php?status=error');
+     header('location: listar.php?status=error');
      exit;
 }
 
@@ -16,7 +16,7 @@ $obProduto = Produto::getProduto($_GET['id']);
 
 //VALIDAÇÃO DA VAGA
 if(!$obProduto instanceof Produto){
-    header('location: index.php?status=error');
+    header('location: listar.php?status=error');
     exit;
 }
 
@@ -27,7 +27,7 @@ if (isset($_POST['excluir'])) {
    
     $obProduto->excluir();
 
-    header('location: index.php?status=success'); 
+    header('location: listar.php?status=success'); 
     exit;
 }
 

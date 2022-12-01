@@ -20,11 +20,11 @@
      foreach($produto as $produtos){  //cada posicao de vagas vai ocupa ser por vaga
         $resultados .= '<tr>
                         <td>'.$produtos->id.'</td>
-                        <td>'.$produtos->name.'</td>
                         <td>'.$produtos->codigo.'</td>
+                        <td>'.$produtos->name.'</td>
                         <td>'.$produtos->descricao.'</td>
                         <td>'.$produtos->preco.'</td>
-                        <td>'.date('d/m/Y - H:i',strtotime($produtos->data)).'</td>
+                        <td>'.date('d/m/Y',strtotime($produtos->data_validade)).'</td>
                         <td>
                             <a href="editar.php?id='.$produtos->id.'"><button type="button" class="btn btn-primary">Editar</button></a>
                             <a href="excluir.php?id='.$produtos->id.'"><button type="button" class="btn btn-danger">Excluir</button></a>
@@ -57,6 +57,7 @@
            <thead>
                 <tr>                    
                     <th>ID</th>
+                    <th>Codigo</th>
                     <th>Nome</th>
                     <th>Descrição</th>
                     <th>Preço</th>

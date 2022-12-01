@@ -7,7 +7,7 @@ use \App\Entity\vaga;
 /*
 //VALIDAÇÃO DO ID
 if(!isset($_GET['id']) or !is_numeric($_GET['id'])){
-     header('location: index.php?status=error');
+     header('location: listar.php?status=error');
      exit;
 }
 */
@@ -19,7 +19,7 @@ echo "<pre>"; print_r($obVaga); echo "</pre>"; exit;
 
 //VALIDAÇÃO DA VAGA
 if(!$obVaga instanceof Vaga){
-    header('location: index.php?status=error');
+    header('location: listar.php?status=error');
     exit;
 }
 
@@ -33,7 +33,7 @@ if (isset($_POST['titulo'], $_POST['descricao'], $_POST['ativo'])) {
     $obVaga->atualizar();
 
 
-    header('location: index.php?status=success'); 
+    header('location: listar.php?status=success'); 
     exit;
 }
 

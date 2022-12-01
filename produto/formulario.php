@@ -15,27 +15,27 @@
         
         <div class="form-group">
             <label> Nome do Produto </label>
-            <input class="form-control" name="name" rows="5"><?=$obProduto->name?></input>
+            <input class="form-control" name="name" rows="5" value="<?=$obProduto->name?>"></input>
         </div>
 
         <div class="form-group">
             <label> Descrição </label>
-            <textarea class="form-control" name="descricao" rows="5"><?=$obProduto->descricao?></textarea>
+            <textarea class="form-control" name="descricao" rows="5"> <?=$obProduto->descricao?></textarea>
         </div>
         
         <div class="form-group">
             <label> Preço </label>
-            <input class="form-control" name="preco" rows="5"><?=$obProduto->preco?></input>
+            <input class="form-control" name="preco" rows="5" value="<?=$obProduto->preco?>"></input>
         </div>
 
         <div class="form-group">
             <label> Data de validade</label>
-            <input class="form-control" name="preco" rows="5"><?=$obProduto->data_validade?></input>
+            <input class="form-control" name="data_validade" rows="5" value="<?=$obProduto->data_validade?>"></input>
         </div>
 
 
         <div class="form-group mt-3">
-            <button type="submit" class="btn btn-success"> Enviar </button>
+        <a href="listar.php"><button type="submit" class="btn btn-success"> Enviar </button></a>
         </div>
 
     </form>

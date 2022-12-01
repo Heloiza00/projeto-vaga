@@ -92,7 +92,9 @@ class DataBase{
 
      //MONTA A QUERY 
       $query = 'INSERT INTO '.$this->table.' ('.implode(',',$fields).') VALUES ('.implode(',',$binds).')';
-      
+      //echo "<pre>"; print_r($query); echo "</pre>"; exit;
+      echo $query;
+     
       //EXECUTE O INSERT 
       $this->execute($query,array_values($values)); 
       
@@ -117,7 +119,7 @@ class DataBase{
         $query = 'SELECT '.$fields.' FROM '.$this->table.' '.$where.' '.$order.' '.$limit;
         echo $query; 
         //EXECUTA A QUERY 
-        return $this->execute($query);
+        return $this->execute($query); 
     }
        
     /**

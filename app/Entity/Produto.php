@@ -20,7 +20,7 @@ class Produto
     * Código do produto
     *  @var interger
     */
-    public $cod;
+    public $codigo;
 
     /**
      * Nome do produto 
@@ -44,7 +44,7 @@ class Produto
      * Data de validade do produto 
      * @var string 
      */
-    public $data;
+    public $data_validade;
 
     
     /**
@@ -54,16 +54,19 @@ class Produto
     public function cadastrar()
     {
         //INSERIR O PRODUTO NO BANCO
-        $obDatabase = new DataBase('produto');
-        $this->id = $obDatabase->insert([
+        //$this->data_validade = date('Y-m-d H:i:s');
+
+        $tabela = new DataBase('produto');
+        $this->id = $tabela->insert([
                                             'codigo' => $this->codigo,
+                                            'name'   => $this->name,
                                             'descricao' => $this->descricao,
                                             'preco' => $this->preco,
-                                            'data' => $this->data
+                                            'data_validade' => $this->data_validade
                                         ]);
 
 
-        //RETORNAR SUCESSO
+        //RETORNAR SUCESSO 
         return true;
     }
 
@@ -75,9 +78,10 @@ class Produto
             return (new DataBase('produto'))->update('id = '.$this->id,[
                                                                        
                                                                         'codigo' => $this->codigo,
+                                                                        'name'   => $this->name,
                                                                         'descricao' => $this->descricao,
                                                                         'preco' => $this->preco,
-                                                                        'data' => $this->data
+                                                                        'data_validade' => $this->data_validade
                                                                    
                                                                      ]);
        
